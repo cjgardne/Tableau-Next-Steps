@@ -1,0 +1,56 @@
+﻿Class Exercises and Solutions:
+Exercise I - Display Sales and Sales +15% side by side on a chart with labels.
+1. Create the Sales +%15 calculated field.
+   1. Right click on the Sales pill and choose create calculated field.
+   2. Name the field as desired.
+   3. The calculation should be: [Sales]*1.15
+   4. Click ok to close the window and create the object.
+2. Drag Order Date to columns.
+3. Drag Measure Names to Rows.
+4. Drag Measure Names to filters. Filter Measure Names to only Sales and your newly created Sales +15% calculation.
+5. Drag Measure Values to the Text box on the Marks card.
+Solution: Listed next to each other, the Sales in 2013 should be 2,852,360 and the Sales +15% should be 3,280,214.
+
+
+Exercise II - Use a reference line to illustrate which Region is falling below the overall Profit for all Product Categories.
+1. Drag Regions to columns.
+2. Drag Product Categories to columns to the right of Regions. This should show all the Product Categories within each Region.
+3. Drag Profit to Rows.
+4. Right click on the Y (Profit) axis and choose Add Reference Line...
+   1. We want the average across all Regions and Product Categories, so set the Scope to Entire Table.
+   2. Ensure that the Value is set to Sum(Profit) Average.
+   3. Adjust the Label as desired.
+   4. Click Ok to create the reference line.
+5. Examine the chart with the reference line.
+Solution: The newly created reference line reflects the average profit of all categories across all Regions. The South region is performing  noticeably lower than the overall average.
+
+
+Exercise III - Create a Shipping Cost to Sales Ratio calculation and determine which Product Sub-Category has a Shipping Cost to Sales Ratio greater than 3%.
+1. Right click on Shipping Cost and choose Create a Calculated Field...
+   1. Name the field as desired.
+   2. The calculation should read SUM([Shipping Cost])/SUM([Sales]). Be sure to add the SUM parts of the calculation or the end result will aggregate incorrectly!
+   3. Click Ok to create the calculated field.
+   4. Once the field is created, find it in the list of measures to the left.
+   5. Right click on it and choose Default Properties - Number Format.
+   6. Set the default format to a percentage with 2 Decimal points.
+2. Drag Product Sub-Category to Rows.
+3. Drag the newly created Shipping Cost to Sales Ratio calculated field to Text.
+Solution: The Product Sub-Category of Paper is higher than 3%. It should have a value of %3.49.
+
+
+
+
+Exercise IV - Determine the top ten customers by Sales. Using sets and table calculations, determine what percentage of total profit these customers bring in.
+1. Right click on Customer Name and choose Create-Set...
+   1. Click on the Top tab to make the set consist of the top values.
+   2. Choose By field to tell Tableau which field you’d like the top customers by.
+   3. Set the values to 
+      1. Top
+      2. 10
+      3. by Sales
+      4. Sum
+   4. Name the set and click Ok to create it.
+2. Drag the newly created set to Rows.
+3. Drag Profit to Text on the Marks card. This shows how much profit the Top 10 Customers brought in compared to everyone else.
+4. Right click on Profit in the Marks card area. Choose Quick Table Calculation - Percent of Total.
+Solution: Those customers in the top 10 by sales generate %5.03 of the total profit.
